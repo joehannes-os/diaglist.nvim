@@ -15,7 +15,7 @@ M.open_all_diagnostics = function()
 end
 
 M.diagnostics_hook = function()
-  M.populate_qflist()
+  populate_qflist()
 end
 
 function M.init()
