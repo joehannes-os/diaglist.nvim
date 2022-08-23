@@ -8,6 +8,7 @@ local M = {}
 M.last_priority_uri = nil
 M.title = 'Workspace Diagnostics'
 M.change_since_render = false
+M.debounce_ms = 50
 
 local function is_qf_foreign()
   return vim.fn.getqflist{ title = 0 }.title ~= M.title
@@ -39,7 +40,6 @@ end
 
 M.open_all_diagnostics = function()
   populate_qflist()
-  api.nvim_command('copen')
 end
 
 M.diagnostics_hook = function()
