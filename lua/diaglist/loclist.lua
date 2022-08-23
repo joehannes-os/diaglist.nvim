@@ -28,7 +28,6 @@ end
 
 function M.open_buffer_diagnostics()
   M.diagnostics_hook()
-  vim.api.nvim_command [[lw]]
 end
 
 return M
