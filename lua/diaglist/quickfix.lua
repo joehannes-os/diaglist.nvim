@@ -4,16 +4,10 @@ local util = require('diaglist.util')
 
 local M = {}
 
-M.title = 'Workspace Diagnostics'
-
-local function is_qf_foreign()
-  return vim.fn.getqflist{ title = 0 }.title ~= M.title
-end
-
 local function populate_qflist(open)
   open = open or false
   
-  vim.diagnostic.setqflist({ open = open, title = M.title })
+  vim.diagnostic.setqflist({ open = open })
 end
 
 M.open_all_diagnostics = function()
@@ -21,9 +15,7 @@ M.open_all_diagnostics = function()
 end
 
 M.diagnostics_hook = function()
-  if not is_qf_foreign() then
-    M.populate_qflist()
-  end
+  M.populate_qflist()
 end
 
 function M.init()
