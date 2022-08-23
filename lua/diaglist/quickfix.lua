@@ -27,7 +27,6 @@ M.diagnostics_hook = function()
 end
 
 function M.init()
-  nil
 end
 
 return M
