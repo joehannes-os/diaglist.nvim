@@ -11,14 +11,15 @@ M.populate_qflist = function(open)
 end
 
 M.open_all_diagnostics = function()
-  populate_qflist(true)
+  M.populate_qflist(true)
 end
 
 M.diagnostics_hook = function()
-  populate_qflist()
+  M.populate_qflist()
 end
 
 function M.init()
+  vim.defer_fn(M.populate_qflist, 5000)
 end
 
 return M
