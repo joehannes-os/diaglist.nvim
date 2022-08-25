@@ -4,7 +4,7 @@ local util = require('diaglist.util')
 
 local M = {}
 
-local function populate_qflist(open)
+M.populate_qflist = function(open)
   open = open or false
   
   vim.diagnostic.setqflist({ open = open })
